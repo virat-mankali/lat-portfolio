@@ -1,0 +1,410 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #0a0a0a;
+  --card-foreground: #fafafa;
+  --popover: #0a0a0a;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #fafafa;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
+  --accent: #1a1a1a;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #fbbf24;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #0a0a0a;
+  --card-foreground: #fafafa;
+  --popover: #0a0a0a;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #fafafa;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
+  --accent: #1a1a1a;
+  --accent-foreground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafafa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #fbbf24;
+}
+
+.light {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #d97706;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: #fbbf24;
+  color: #0a0a0a;
+}
+
+.light ::selection {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+/* ========================================
+   LIGHT MODE OVERRIDES
+   ======================================== */
+
+.light {
+  background-color: #fafafa;
+}
+
+/* Light mode navigation when scrolled */
+.light nav.backdrop-blur-md {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+}
+
+/* Text colors */
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-gray-300 {
+  color: #475569 !important;
+}
+
+.light .text-gray-400 {
+  color: #64748b !important;
+}
+
+.light .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.light .text-gray-600 {
+  color: #475569 !important;
+}
+
+/* AMBER/GOLD COLORS - Bright gold in light mode */
+.light .text-amber-400 {
+  color: #f59e0b !important; /* amber-500 - bright gold */
+  font-weight: 600;
+}
+
+.light .text-amber-700 {
+  color: #f59e0b !important; /* amber-500 - bright gold */
+  font-weight: 600;
+}
+
+.light .text-amber-400\/80 {
+  color: rgba(245, 158, 11, 0.9) !important;
+}
+
+.light .bg-amber-400 {
+  background-color: #f59e0b !important; /* amber-500 - bright gold */
+}
+
+.light .bg-amber-400\/10 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+}
+
+.light .border-amber-400\/50 {
+  border-color: rgba(245, 158, 11, 0.5) !important;
+}
+
+.light .hover\:border-amber-400\/50:hover {
+  border-color: rgba(245, 158, 11, 0.7) !important;
+}
+
+.light .hover\:text-amber-400:hover {
+  color: #f59e0b !important;
+}
+
+.light .focus\:border-amber-400\/50:focus {
+  border-color: rgba(245, 158, 11, 0.6) !important;
+}
+
+/* Background colors */
+.light .bg-\[\#0a0a0a\] {
+  background-color: #fafafa !important;
+}
+
+.light .bg-gray-800 {
+  background-color: #f1f5f9 !important;
+}
+
+.light .bg-gray-800\/50 {
+  background-color: rgba(241, 245, 249, 0.7) !important;
+}
+
+.light .bg-gray-900\/30 {
+  background-color: #f8fafc !important;
+}
+
+/* Border colors */
+.light .border-gray-800 {
+  border-color: #e2e8f0 !important;
+}
+
+.light .border-gray-800\/50 {
+  border-color: rgba(226, 232, 240, 0.7) !important;
+}
+
+.light .border-gray-700 {
+  border-color: #cbd5e1 !important;
+}
+
+.light .border-gray-700\/50 {
+  border-color: rgba(203, 213, 225, 0.7) !important;
+}
+
+/* Divider lines in light mode - darker */
+.light .bg-gray-500 {
+  background-color: #4b5563 !important;
+}
+
+.light .h-px.bg-gray-500 {
+  background-color: #4b5563 !important;
+}
+
+.light .border-gray-500 {
+  border-color: #4b5563 !important;
+}
+
+/* Hover states */
+.light .hover\:border-gray-700:hover {
+  border-color: #94a3b8 !important;
+}
+
+.light .hover\:border-gray-300:hover {
+  border-color: #94a3b8 !important;
+}
+
+.light .hover\:bg-gray-100:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.light .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+.light .hover\:bg-gray-900\/30:hover {
+  background-color: rgba(241, 245, 249, 0.5) !important;
+}
+
+/* Cards and containers */
+.light .bg-white {
+  background-color: #0f172a !important;
+}
+
+.light .hover\:bg-gray-100:hover {
+  background-color: #1e293b !important;
+}
+
+/* Fix the CTA buttons in light mode */
+.light a.bg-white,
+.light button.bg-white {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+.light a.bg-white:hover,
+.light button.bg-white:hover {
+  background-color: #1e293b !important;
+}
+
+/* Input fields */
+.light input,
+.light textarea {
+  background-color: #ffffff !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Focus states */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Floating accent badge */
+.light .bg-amber-400.text-black {
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Timeline dot background */
+.light .bg-gray-800.border-gray-700 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Timeline dot background in light mode */
+.light .bg-gray-300 {
+  background-color: #9ca3af !important;
+}
+
+/* Service cards background */
+.light .bg-\[\#0a0a0a\].border-gray-800 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Subtle shadow for light mode cards */
+.light .border-gray-800.rounded-xl,
+.light .border-gray-800.rounded-2xl {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.light .border-gray-800.rounded-xl:hover,
+.light .border-gray-800.rounded-2xl:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   SECTION DIVIDERS & TIMELINE
+   ======================================== */
+
+/* Section divider line */
+.section-divider {
+  background-color: #27272a; /* dark mode default */
+}
+
+.light .section-divider {
+  background-color: #374151 !important; /* gray-700 - dark and visible */
+}
+
+/* Timeline vertical line */
+.timeline-line {
+  background-color: #27272a; /* dark mode default */
+}
+
+.light .timeline-line {
+  background-color: #374151 !important; /* gray-700 - dark and visible */
+}
+
+/* Timeline dot */
+.timeline-dot {
+  background-color: #1f2937; /* dark mode default */
+  border: 2px solid #374151;
+}
+
+.light .timeline-dot {
+  background-color: #d1d5db !important; /* gray-300 */
+  border-color: #374151 !important; /* gray-700 */
+}
+
+/* Footer divider */
+.footer-divider {
+  border-color: #27272a; /* dark mode default */
+}
+
+.light .footer-divider {
+  border-color: #374151 !important; /* gray-700 - dark and visible */
+}
