@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { StructuredData } from "@/components/StructuredData";
+import { Analytics } from "@vercel/analytics/next";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -83,6 +84,7 @@ export default function RootLayout({
       </head>
       <body className={`${outfit.variable} font-outfit antialiased`}>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
