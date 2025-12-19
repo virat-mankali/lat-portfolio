@@ -57,7 +57,7 @@ export default async function Image() {
               maxWidth: '900px',
             }}
           >
-            Full Stack Developer & AI/ML Entrepreneur
+            AI/ML Developer & Entrepreneur
           </div>
           
           <div
