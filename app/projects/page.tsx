@@ -17,12 +17,21 @@ const ProjectsPage = () => {
       github: null,
     },
     {
-      title: "Cortexa",
+      title: "Telegram CLI",
+      tagline: "telegram from your terminal",
+      description: "A CLI tool for Telegram — send messages, manage chats, and stay connected without ever leaving your terminal. Inspired by WA CLI.",
+      tech: ["Go", "MTProto", "SQLite", "Cobra"],
+      status: "📱 shipped",
+      link: "https://github.com/virat-mankali/telegram-cli",
+      github: "https://github.com/virat-mankali/telegram-cli",
+    },
+    {
+      title: "Dayflix",
       tagline: "journaling that remembers everything",
       description: "AI journaling companion that remembers everything you've shared. Talk to it when you're feeling low, and it responds with full context — no hallucinations.",
       tech: ["Next.js", "Convex", "Vector DB", "NLP", "Clerk"],
       status: "📱 shipped",
-      link: "https://cortexa.fun",
+      link: "https://dayflix.in",
       github: null,
     },
     {

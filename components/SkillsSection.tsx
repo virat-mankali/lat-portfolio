@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 const SkillsSection = () => {
   const techStack = {
     "build with": ["Next.js", "React Native", "Convex", "TypeScript"],
-    "backend & data": ["Supabase", "LangChain", "Next.js", "Python"],
-    "AI/ML stuff": ["TensorFlow", "Deep Learning", "Computer Vision"],
+    "backend & data": ["Go", "Python", "Rust", "Supabase", "LangChain"],
+    "AI/ML stuff": ["LangGraph", "Deep Learning", "TensorFlow", "Computer Vision"],
     "design & edit": ["Figma", "DaVinci Resolve", "CapCut"]
   };
 
