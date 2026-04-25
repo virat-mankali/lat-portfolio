@@ -1,19 +1,22 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTheme } from '@/contexts/ThemeContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const { theme, toggleTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const pathname = usePathname();
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -22,10 +25,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: 'about', href: '#about' },
-    { label: 'skills', href: '#skills' },
-    { label: 'projects', href: '#projects' },
-    { label: 'contact', href: '#contact' },
+    { label: 'about', href: '/#about' },
+    { label: 'skills', href: '/#skills' },
+    { label: 'projects', href: '/#projects' },
+    { label: 'blog', href: '/blog' },
+    { label: 'contact', href: '/#contact' },
   ];
 
   return (
@@ -42,21 +46,29 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo - simple text */}
-          <a href="#" className="text-lg font-semibold text-white dark:text-white light:text-gray-900">
+          <Link href="/" className="text-lg font-semibold text-white dark:text-white light:text-gray-900">
             vm<span className="text-amber-400 dark:text-amber-400 light:text-amber-700">.</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-white dark:hover:text-white light:hover:text-gray-900 transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = item.href === pathname;
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`text-sm transition-colors duration-200 ${
+                    isActive
+                      ? 'text-amber-400 dark:text-amber-400 light:text-amber-700'
+                      : 'text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-white dark:hover:text-white light:hover:text-gray-900'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             
             {/* Resume button */}
             <a
@@ -93,6 +105,7 @@ const Navigation = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-gray-400 dark:text-gray-400 light:text-gray-600"
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -110,14 +123,18 @@ const Navigation = () => {
             >
               <div className="py-4 space-y-4 border-t border-gray-800 dark:border-gray-800 light:border-gray-200">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-white dark:hover:text-white light:hover:text-gray-900 transition-colors"
+                    className={`block transition-colors ${
+                      item.href === pathname
+                        ? 'text-amber-400 dark:text-amber-400 light:text-amber-700'
+                        : 'text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-white dark:hover:text-white light:hover:text-gray-900'
+                    }`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
                 <a
                   href="/resume.pdf"
