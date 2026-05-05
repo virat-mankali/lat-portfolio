@@ -41,8 +41,8 @@ const ProjectsSection = () => {
       description: "A hyper-local mobile marketplace connecting individuals for trading hens and poultry. Features GPS-based discovery with radius filtering, broker directory, subscription tiers, WhatsApp + phone integration, and regional language support.",
       tech: ["React Native", "Expo", "Convex", "Clerk", "RevenueCat", "NativeWind"],
       status: "📱 shipped",
-      link: null,
-      github: null,
+      link: undefined,
+      github: undefined,
       featured: true
     },
     {
