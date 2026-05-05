@@ -221,7 +221,7 @@ const ContactSection = () => {
           {/* Footer */}
           <div className="pt-16 border-t footer-divider">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-600 dark:text-gray-600 light:text-gray-500 text-sm">
-              <p>© 2025 virat mankali</p>
+              <p>© 2026 virat mankali</p>
               <p>built with next.js & too much coffee ☕</p>
             </div>
           </div>
