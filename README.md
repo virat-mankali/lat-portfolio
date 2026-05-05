@@ -41,7 +41,7 @@ bun run start
 ## 📁 Project Structure
 
 ```
-# virat-portfolio .
+# virat-portfolio
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Root layout with providers
 │   ├── page.tsx           # Home page
