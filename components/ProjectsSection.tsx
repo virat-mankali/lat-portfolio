@@ -36,16 +36,6 @@ const ProjectsSection = () => {
       featured: true
     },
     {
-      title: "HenZone",
-      tagline: "hyper-local marketplace for hens & poultry",
-      description: "A hyper-local mobile marketplace connecting individuals for trading hens and poultry. Features GPS-based discovery with radius filtering, broker directory, subscription tiers, WhatsApp + phone integration, and regional language support.",
-      tech: ["React Native", "Expo", "Convex", "Clerk", "RevenueCat", "NativeWind"],
-      status: "📱 shipped",
-      link: undefined,
-      github: undefined,
-      featured: true
-    },
-    {
       title: "Styrae",
       tagline: "daily outfits from your wardrobe",
       description: "Upload your wardrobe, get Pinterest-worthy outfit combinations daily. AI curates fresh looks from clothes you already own.",
