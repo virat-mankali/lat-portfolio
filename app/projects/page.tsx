@@ -45,11 +45,11 @@ const ProjectsPage = () => {
     },
     {
       title: "Styrae",
-      tagline: "daily outfits from your wardrobe",
-      description: "Upload your wardrobe, get Pinterest-worthy outfit combinations daily. AI curates fresh looks from clothes you already own.",
-      tech: ["Next.js", "Computer Vision", "Convex", "Clerk"],
-      status: "📱 shipped",
-      link: "https://styrae.vercel.app",
+      tagline: "AI outfits for your real wardrobe",
+      description: "Native mobile styling app currently in testing. The public site introduces Styrae and lets early users join the waitlist before rollout.",
+      tech: ["React Native", "Expo", "Computer Vision", "Convex", "Clerk"],
+      status: "🧪 testing soon",
+      link: "https://styrae.in",
       github: null,
     },
     {
