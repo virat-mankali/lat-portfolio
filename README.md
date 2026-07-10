@@ -1,4 +1,4 @@
-# Virat Mankali - Portfolio
+# Virat Mankali — Portfolio
 
 A modern, responsive portfolio website built with Next.js 16, showcasing my work as a Co-founder at Snazzl, Full Stack Developer, and AI/ML Student.
 
