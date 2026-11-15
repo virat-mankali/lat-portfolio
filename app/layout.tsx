@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { PortfolioCursor } from "@/components/PortfolioCursor";
 import { Providers } from "@/components/Providers";
 import { StructuredData } from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next";
@@ -85,6 +86,7 @@ export default function RootLayout({
       </head>
       <body className={`${outfit.variable} font-outfit antialiased`}>
         <Providers>{children}</Providers>
+        <PortfolioCursor />
         {process.env.WORKERS_CI !== "1" && process.env.STATIC_EXPORT !== "1" && <Analytics />}
       </body>
     </html>

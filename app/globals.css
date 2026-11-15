@@ -107,6 +107,74 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.portfolio-cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  body:has(> .portfolio-cursor[data-visible]),
+  body:has(> .portfolio-cursor[data-visible]) * {
+    cursor: none !important;
+  }
+
+  .portfolio-cursor[data-visible] {
+    visibility: visible;
+  }
+}
+
+.portfolio-cursor-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.portfolio-cursor-dot,
+.portfolio-cursor-ring {
+  display: block;
+  border-radius: 50%;
+  translate: -50% -50%;
+  transition: scale 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ring);
+}
+
+.portfolio-cursor-ring {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ring);
+}
+
+.portfolio-cursor-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--ring);
+  opacity: 0;
+  transition: opacity 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-cursor[data-interactive] .portfolio-cursor-ring {
+  scale: 1.8;
+}
+
+.portfolio-cursor[data-interactive] .portfolio-cursor-ring::after {
+  opacity: 0.12;
+}
+
+.portfolio-cursor[data-interactive] .portfolio-cursor-dot {
+  scale: 0.75;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
