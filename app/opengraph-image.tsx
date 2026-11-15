@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-static';
 
 export const alt = 'Virat Mankali - Full Stack Developer & AI/ML Entrepreneur';
 export const size = {

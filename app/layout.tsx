@@ -11,6 +11,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://virat.me"),
   title: "vm.",
   description: "Co-founder at Snazzl. Full-stack developer, AI/ML student at Woxsen University, and national-level swimmer. Building innovative fashion tech solutions.",
   keywords: ["Virat Mankali", "Full Stack Developer", "AI/ML", "React Native", "Next.js", "Snazzl", "Entrepreneur", "Portfolio"],
@@ -84,7 +85,7 @@ export default function RootLayout({
       </head>
       <body className={`${outfit.variable} font-outfit antialiased`}>
         <Providers>{children}</Providers>
-        <Analytics />
+        {process.env.WORKERS_CI !== "1" && process.env.STATIC_EXPORT !== "1" && <Analytics />}
       </body>
     </html>
   );
